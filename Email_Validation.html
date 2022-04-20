@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Validation Form</title>
+    <script src="jQuery.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap');
+
+        #div1 {
+            margin: 40px;
+            font-family: 'Raleway', sans-serif;
+            background: rgba(0, 151, 19, 0.1);
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            background-color: white;
+            border-radius: 2%;
+
+        }
+
+
+        body {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 130%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0px;
+            height: 100%;
+            width: 100%;
+
+        }
+
+        input {
+            padding: 10px;
+            border-radius: 2px;
+
+            font-family: 'Raleway', sans-serif;
+            width: 360px;
+            box-shadow: 0 6px 10px 0 rgba(0, 0, 0, );
+            opacity: 100%;
+            border: none;
+            outline: none;
+            border-top-style: hidden;
+            border-right-style: hidden;
+            border-left-style: hidden;
+            border-bottom-style: solid;
+
+        }
+
+
+
+        label {
+            width: 200px;
+            float: left;
+        }
+
+        #submit {
+            background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%);
+            width: 360px;
+            border-style: none;
+            opacity: 100%;
+            flex: 1 1 auto;
+            margin: 10px;
+            padding: 20px;
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;
+            /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
+            box-shadow: 0 0 20px #eee;
+            border-radius: 10px;
+            color: black;
+            font-family: 'Raleway', sans-serif;
+            font-size: 25px;
+        }
+
+        #submit:hover {
+            transform: scale(1.1);
+            font-family: 'Raleway', sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 10vh;
+            margin: 0px;
+            background-image: url("https://www.travelb2b.app/login/images/bglogin.jpg");
+            background-repeat: no-repeat;
+            background-size: 110%;
+
+        }
+
+        #bg {
+
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin: 0px;
+        }
+
+        label {
+            padding: 5px;
+            font-weight: bold;
+            color: #000000
+        }
+    </style>
+</head>
+
+<body>
+    <div id="bg">
+        <div id="div1">
+            <h1>Login To Your Account</h1>
+            <label for="Email">Enter Email Id</label>
+            <input type="email" name="Email" id="Email" placeholder="Enter Email ID"><br><br>
+            <label for="Email">Phone Number</label>
+            <input type="text" name="Email" id="phone" placeholder="Enter Phone Number"><br><br>
+            <label for="Email">Enter Password</label>
+            <input type="password" name="Email" id="pass" placeholder="Enter Password"><br><br>
+            <label for="Email">Confirm Password</label>
+            <input type="password" name="Email" id="pasc" placeholder="Enter Confirm Password"><br><br>
+
+            <button type="button" id="submit">Login</button>
+
+        </div>
+    </div>
+    <script>
+        var errormsg = "";
+        function isEmail(email) {
+            var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+            return regex.test(email);
+
+        }
+
+
+        $("#submit").click(function () {
+
+            var a = $("#phone").val();
+            var b = $("#pass").val();
+            var c = $("#pasc").val();
+            var d = $("Email").val();
+            if (a == "") {
+                alert("Phone Number Is Empty")
+            }
+            if (b == "") {
+                alert("Password Is Empty")
+            }
+            if (c == "") {
+                alert("Confirm Password Is Empty")
+            }
+            if (d == "") {
+                alert("Email")
+            }
+
+            if (isEmail($("#Email").val()) == false) {
+                errormsg += "Email is Invalid"
+                alert(errormsg)
+
+            }
+            if ($.isNumeric($("#phone").val()) == false) {
+                errormsg += "Phone Number is Invalid"
+                alert(errormsg)
+            }
+
+            if (a.length == 10) {
+
+
+            }
+            else {
+                alert("Enter 10 DIgit Mobile No")
+            }
+
+
+            if (b == c) {
+                alert("Submitted")
+            }
+            else {
+                alert("Confirm Password dosent match with Pas");
+            }
+
+            
+        }
+
+        )
+       
+
+    </script>
+
+
+</body>
+
+</html>
